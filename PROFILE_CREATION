@@ -1,5 +1,9 @@
-PROFILE CREATION IN CLI
-CREATION OF DEFAULT (or) APPSERVER PROFILE
+____________PROFILE CREATION IN CLI___________
+
+PROFILES TYPES IN WAS 
+1.CELL 2.DEFAULT 3.DMGR 4.MANAGED 5.MANAGEMENT 6.SECUREPROXY
+
+------CREATION OF DEFAULT (or) APPSERVER PROFILE-----
 
 ➤ go to this path /opt/IBM/Webspehere/Appserver/bin and run this below cmd
 ✻ ./manageprofile.sh -create -profileName default -
@@ -13,7 +17,7 @@ select the created profie go to logs open the log file [cat AboutThisProfile.txt
 take admin console port from that log file
 ➤ open the browser hit the console using http://IP (or)hostname:9080/admin
 
-CREATION OF DMGR PROFILE
+----------CREATION OF DMGR PROFILE--------------------
 
 ➤ go to this path /opt/IBM/Webspehere/Appserver/bin run this below cmd
 ✻ ./manageprofile.sh -create -profileName dmgr -
