@@ -1,0 +1,28 @@
+PROFILE CREATION IN CLI
+CREATION OF DEFAULT (or) APPSERVER PROFILE
+
+➤ go to this path /opt/IBM/Webspehere/Appserver/bin and run this below cmd
+✻ ./manageprofile.sh -create -profileName default -
+templatePath /opt/IBM/Webspehere/Appserver/profileTemplates/default/ -enable Admin
+Security true -adminUserName wasadmin -adminPassword sarasu10 -hostName
+vazith.eidikointernal.com
+➤ after that go to this path /opt/IBM/Webspehere/Appserver/Profiles
+select the created profie go to bin run this cmd ./startServer server1
+➤ after that go this path /opt/IBM/Webspehere/Appserver/Profiles
+select the created profie go to logs open the log file [cat AboutThisProfile.txt]
+take admin console port from that log file
+➤ open the browser hit the console using http://IP (or)hostname:9080/admin
+
+CREATION OF DMGR PROFILE
+
+➤ go to this path /opt/IBM/Webspehere/Appserver/bin run this below cmd
+✻ ./manageprofile.sh -create -profileName dmgr -
+templatePath /opt/IBM/Webspehere/Appserver/profileTemplates/dmgr/ -enable Admin
+Security true -adminUserName wasadmin -adminPassword sarasu10 -hostName
+vazith.eidikointernal.com
+➤ after that go to this path /opt/IBM/Webspehere/Appserver/Profiles
+select the created profie go to bin run this cmd ./startManged.sh
+➤ after that go this path /opt/IBM/Webspehere/Appserver/Profiles
+select the created profie go to logs open the log file [cat AboutThisProfile.txt]
+take admin console port from that log file
+➤ open the browser hit the console using http://IP (or)hostname:9060/admin
