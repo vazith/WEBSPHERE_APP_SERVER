@@ -1,0 +1,24 @@
+-------WAS_CMD------------
+
+CMD FOR CHECK THE VERSION OF WEBSPHERE
+PATH:/opt/IBM/Websphere/AppServer/bin
+----->./versioninfo.sh
+
+CMD FOR CHECK THE SDK OF WEBSPHERE
+PATH:/opt/IBM/Websphere/AppServer/profiles/def/bin
+-----> ./managesdk.sh -listAvailable
+
+CMD FOR START THE NODE
+PATH:/opt/IBM/Websphere/AppServer/profiles/def/bin
+---> ./startserver.sh nodeagent
+
+CMD FOR BACKUP THE PROFILE CONFIGURATION
+PATH:/opt/IBM/Websphere/AppServer/profiles/def/bin
+---> ./backupConfig.sh (THIS CMD USED WHEN SERVER IS STOP)
+---> ./backupConfig.sh -nostop (THIS CMD USED WHEN SERVER IS START)
+
+CMD FOR BACKUP THE PROFILES
+PATH:/opt/IBM/Websphere/AppServer/bin
+--->./manageprofiles.sh -backupProfile -profileName VAZ -backupFile /opt/IBM/WebSphere/AppServer/logs/VAZ_backup.zip
+
+
