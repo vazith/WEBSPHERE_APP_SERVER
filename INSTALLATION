@@ -1,0 +1,116 @@
+# WEBSPHERE-INSTALLATION
+
+IN WAS THEY ARE 4 TYPES OF INSTALLATION ARE THEY 
+1. ROOT (GUI)
+2. ROOT (CLI)
+3. USER (GUI)
+4. USER (CLI)
+
+
+                  first get all the files
+( for removing confusion i created  directories they are 1.INSTALLMANGER 2. ND 3. FIXPACK ) and send all the files to revalent directories
+
+------------------->      ROOT INSTALLATION   <---------------------- 
+vi /etc/hostname  (or) hostnamectl set-hostname vazith.eidikointernal.com
+vi /etc/hosts
+vi /etc/sysconfig/network
+cd INSTALLMANAGER AWA
+unzip agent.installer.linux.gtk.x86_64_1.6.020120831_1216.zip 
+run ./install
+____________GUI (open) ___________ 
+
+tick marks installmanger version 
+agree the licenses and policies 
+next
+install
+after install show restart installmanager 
+restart install manger 
+unzip all ND files (WAS_ND_v8.5_1_OF_3.zip, WAS_ND_v8.5_2_OF_3.zip , WAS_ND_v8.5_3_OF_3.zip)
+unzip FIXPACK files (8.5.5-WS-WAS-FP015-part1.zip, 8.5.5-WS-WAS-FP015-part2.zip, 8.5.5-WS-WAS-FP015-part3.zip )
+go to path of /opt/IBM/Installmanger/eclipse 
+run ./IBM (or) ./launcer
+
+_______GUI (open) ________________
+left up side shows files, help
+click files  (files inside open,viewlog,installionhistory,viewinstalledpackages,prefernce,exit)
+click preferences
+click add repository 
+by using browse after that click on file system select the repository.config path of (ND,FIXPACK) 
+Testconnection 
+click o install
+tick mark on ND version and FIXPACK version 
+agree the license and policy
+press install
+path is created /opt/IBM/Websphere/Appserver
+
+
+-------------------PATHS---------------------------------------
+default path of WAS : /opt /IBM /Websphere /Appserver
+default path of Installmanger : / opt/IBM/InstallationManger/eclipse
+default path : /opt/ IBM / IMshared
+--------------------------------------------------------------
+➤ To check the version of WAS . go to this path /opt /IBM / Webspehere / Appserver / bin RUN
+this command ./Version.sh
+➤ To check the version Sdk . go to this path /opt /IBM / Webspehere / Appserver / bin RUN this
+command ./managesdk.sh -listAvailable
+
+___ROOT INSTALLATION  IN COMMAND LINE__
+
+➤ get agent.installer.linux.gtk.x86_64_1.6.0.20120831_1216.zip
+➤ unzip agent.installer.linux.gtk.x86_64_1.6.0.20120831_1216.zip
+➤ run this command in /opt/IBM/Websphere/Appserver/bin
+
+✻ ./installc -acceptLicense -InstallationDirectory /opt/IBM/Installationmanger/eclipse -sP
+
+➤ unzip ND
+by using above command we are adding repository to the installmanger
+
+✻ ./imcl listAvailablepackages -repositories /home/ND/repository.config
+[after run the above cmd it give one ND --> com.ibm.websphere.ND.v85_8.5.0.20120501_1108]
+
+➤ by using below command we are installing the “WAS”
+
+✻ ./imcl install com.ibm.websphere.ND.v85_8.5.0.20120501_1108 -
+repositories /home/ND/repository.config -InstallationDirectory
+/opt/IBM/Websphere/Appserver -acceptLicense -sP
+
+FIXPACK
+
+➤ unzip the FIXPACK files
+run this cmd in /opt/IBM/Websphere/Appserver/bin
+./imcl listAvailablepackages -repositories / ✻ home/FIXPACK/repository.config
+by using above command we are adding repository to the installmanger
+[after run the above cmd it give one ND --> com.ibm.websphere.ND.v85_8.5.0.20120501_1108]
+➤ by using below command we are updateing the “FIXPACK”
+✻ ./imcl install com.ibm.websphere.ND.v85_8.5.0.20120501_1108 -
+repositories /home/ND/repository.config -InstallationDirectory
+/opt/IBM/Websphere/Appserver -acceptLicense -SP
+
+___USER INSTALLATION (GUI)__
+
+➤ In user installation all the process is same ..only we create one user & set password to that user
+and switch to that user .and remaining process is same
+➤ after unzip of InstallationManager we use this command
+./userinst
+➤ remaining process all is same as ROOT installation
+
+__USER INSTALLATION IN CLI__
+
+➤ In user installation all the process is same ..only we create one user & set password to that user
+and switch to that user .and remaining process is same
+➤ after unzip of InstallationManager we use this command
+./userinstc
+➤ remaining process all is same as ROOT installation
+
+
+
+
+
+
+
+
+
+
+
+
+
