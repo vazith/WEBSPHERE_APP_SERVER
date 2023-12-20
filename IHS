@@ -31,7 +31,7 @@ CP mod_was_ap22_http.so /OPT/IBM/HTTPSERVER/MODULES
 SERVERTYPES > WEBSERVER
 NEW 
 SELECT NODE : VAZITHNODE01
-SERVERNAME : IHS SERVER
+SERVERNAME : IHS_SERVER
 TYPE: IBM HTTPS SERVER
 (OTHER TYPES : APACHE HTTP SERVER ,MICROSOFT INTERNET INFORMATION SERVICE(IIS), SUN JAVA SYSTEM WEBSERVER .DOMHINO WEB IBM HTTP SERVER
 HTTP SERVER Zos )
@@ -46,10 +46,17 @@ Information required Web server installation location
 /opt/IBM/HTTPServer
 Information required Plug-in installation location
 /opt/IBM/WebSphere/Plugins
-Application mapping to the Web server (all , none ) selecet all
+Application mapping to the Web server (all , none ) seleCt all
+NEXT
 SUMMARY OF ACTIONS
 FINISH
 CLICK TICK MARK  ON CREATED WEBSERVER REVIEW AND SYNCRONIZE IT
+
+CLICK ON CREATED SERVER AND PRESS GENERATE PLUG-IN
+SHOW LIKE THSESE
+( Messages
+InformationPLGC0005I: Plug-in configuration file = /opt/IBM/WebSphere/AppServer/profiles/DMGR/config/cells/vazithCell02/nodes/vazithNode03/servers/IHS_SERVER/plugin-cfg.xml
+InformationPLGC0052I: Plug-in configuration file generation is complete for the Web server. vazithCell02.vazithNode03.IHS_SERVER.)
 
 
 
