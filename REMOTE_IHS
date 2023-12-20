@@ -18,4 +18,46 @@ NEW
 UNMANAGED NODE (SELECT WHICH WE CRATED  BEFORE)
 SERVER NAME : REMOTE_IHS
 TYPE : IBM HTTP SERVER
-(
+(OTHER TYPES : APACHE HTTP SERVER ,MICROSOFT INTERNET INFORMATION SERVICE(IIS), SUN JAVA SYSTEM WEBSERVER .DOMHINO WEB IBM HTTP SERVER
+HTTP SERVER Zos )
+NEXT
+Select  	Template Name 	Type 	     Description
+	 .          IHS 	      System 	  The IHS Web Server Template 
+NEXT
+Enter the Web server properties. 
+
+PORT : 80 FOR (ROOT)
+PORT :8080 FOR (USER)
+Information required Web server installation location 
+/opt/IBM/HTTPServer
+Information required Plug-in installation location 
+/opt/IBM/WebSphere/Plugins
+Application mapping to the Web server
+ALL , NONE (SELECT --> ALL)
+
+Enter the IBM Administration Server properties. 
+
+Information required Administration Server Port :8008
+ Username : wasadmin
+ Password : sarasu10
+conform Password : sarasu10
+TICK MARK :Use SSL 
+NEXT
+Summary of actions: 
+FINISH
+click on created WEBSERVER and (click on review synchronise it)
+AGAIN 
+CLICK ON CREATED SERVER AND CLICK GENERATE PLUG-IN
+(Messages
+InformationPLGC0005I: Plug-in configuration file = /opt/IBM/WebSphere/AppServer/profiles/Dmgr02/config/cells/vazithCell01/nodes/was/servers/REMOTE/plugin-cfg.xml
+InformationPLGC0052I: Plug-in configuration file generation is complete for the Web server. vazithCell01.was.REMOTE. )
+AGAIN 
+CLICK ON CREATED SERVER AND CLICK ON PROPOGATE PLUG -IN
+(PLGC0063E: The propagation of the plug-in configuration file from opt/IBM/WebSphere/AppServer/profiles/Dmgr02/config/cells/vazithCell01/nodes/vazith/servers
+/remote-ihs/plugin-cfg.xml -> to /opt/IBM/WebSphere/Plugins/config/remote-ihs/plugin-cfg.xml on the Web server computer failed.)
+----IN HOST SYSTEM----
+GO TO THIS PATH
+opt/IBM/WebSphere/AppServer/profiles/Dmgr02/config/cells/vazithCell01/nodes/vazith/servers/remote-ihs/plugin-cfg.xml
+GIVE PERMISSIONS TO PLUGIN -CFG.XML
+chmod 777 plugin -cfg.xml
+
