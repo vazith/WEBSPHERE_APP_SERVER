@@ -6,5 +6,4 @@ APPLICATION SERVER IS RESPONSILABLE FOR RUN AND HOST THE APPLICATION.IT ACTS AS 
 
 
 2. IF WE TRIED TO CREATE A SERVER WITHOUT ADDING A NODE IT SHOWS ?
-Error There are no nodes that support servers in the configuration. Use the addNode command from the Nodes collection orfrom the command line before attempting to create a 
-new server.
+Error There are no nodes that support servers in the configuration. Use the addNode command from the Nodes collection orfrom the command line before attempting to create a new server.
