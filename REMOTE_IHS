@@ -24,8 +24,8 @@ NEXT
 Select  	Template Name 	Type 	     Description
 	 .          IHS 	      System 	  The IHS Web Server Template 
 NEXT
+---------------------------------------------
 Enter the Web server properties. 
-
 PORT : 80 FOR (ROOT)
 PORT :8080 FOR (USER)
 Information required Web server installation location 
@@ -34,17 +34,17 @@ Information required Plug-in installation location
 /opt/IBM/WebSphere/Plugins
 Application mapping to the Web server
 ALL , NONE (SELECT --> ALL)
-
+BELOW ASKED
 Enter the IBM Administration Server properties. 
-
 Information required Administration Server Port :8008
- Username : wasadmin
- Password : sarasu10
+Username : wasadmin
+Password : sarasu10
 conform Password : sarasu10
 TICK MARK :Use SSL 
 NEXT
 Summary of actions: 
 FINISH
+---------------------------------------------------------
 click on created WEBSERVER and (click on review synchronise it)
 AGAIN 
 CLICK ON CREATED SERVER AND CLICK GENERATE PLUG-IN
@@ -55,9 +55,27 @@ AGAIN
 CLICK ON CREATED SERVER AND CLICK ON PROPOGATE PLUG -IN
 (PLGC0063E: The propagation of the plug-in configuration file from opt/IBM/WebSphere/AppServer/profiles/Dmgr02/config/cells/vazithCell01/nodes/vazith/servers
 /remote-ihs/plugin-cfg.xml -> to /opt/IBM/WebSphere/Plugins/config/remote-ihs/plugin-cfg.xml on the Web server computer failed.)
+
 ----IN HOST SYSTEM----
 GO TO THIS PATH
 opt/IBM/WebSphere/AppServer/profiles/Dmgr02/config/cells/vazithCell01/nodes/vazith/servers/remote-ihs/plugin-cfg.xml
 GIVE PERMISSIONS TO PLUGIN -CFG.XML
 chmod 777 plugin -cfg.xml
+
+COPY THIS FILE TO REMOTE SYSTEM 
+scp -r remote-ihs root@ 192.168.1.151:/opt/IBM/WebSphere/Plugins/config/
+
+-----REMOTE SYSTEM-------
+BY USING SSH CONNECT TO THE SSH
+SSH 192.168.1.151
+GO TO THIS PATH
+/OPT/IBM/WEBSPHERE/APPSERVER/CONFIG
+vi httpd.config 
+
+
+
+
+
+
+
 
