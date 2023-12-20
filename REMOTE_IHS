@@ -65,17 +65,18 @@ chmod 777 plugin -cfg.xml
 COPY THIS FILE TO REMOTE SYSTEM 
 scp -r remote-ihs root@ 192.168.1.151:/opt/IBM/WebSphere/Plugins/config/
 
------REMOTE SYSTEM-------
+-------REMOTE SYSTEM---------
 BY USING SSH CONNECT TO THE SSH
 SSH 192.168.1.151
 GO TO THIS PATH
 /OPT/IBM/WEBSPHERE/APPSERVER/CONFIG
-vi httpd.config 
+---> vi httpd.config 
 LoadModule was_ap22_module /opt/IBM/HTTPServer/modules/mod_was_ap22_http.so
 WebspherePluginConfig /opt/IBM/WebSphere/Plugins/config/REMOTE_IHS/plugin-cfg.xml
-vi admin.config 
+
+---> vi admin.config 
 GIVE ADMIN PORT IN FIRST AND LAST LINE adminport:8008
-AND 
+DEFALUT USER & GROUP SETTINGS FOR THE SERVER
 USER BANDARU
 GROUP BANDARU ---> FOR (ROOT) FOT USER WE HAVE TO MENTION USERNAME
 GO TO PATH :/opt/IBM/HTTPServer/BIN
@@ -83,7 +84,7 @@ RUN ./apachectl -k start
 RUN ./adminctl start
 RUN ./htpasswd -b ../config/admin.password  wasadmin sarasu10
 
-IT IS WORKING OR NOT WE CAN CHECK BY HITZ THE CONSOLE
+IT IS WORKING OR NOT WE CAN CHECK BY HITZ THE  IHS CONSOLE
 HTTP://I.P:80 (IHS STATIC PAGE OPENS)
 NUMBER  80  WILL BE HIDES ONLY FOR ROOT
 FOR USER
