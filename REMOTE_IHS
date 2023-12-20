@@ -83,6 +83,12 @@ RUN ./apachectl -k start
 RUN ./adminctl start
 RUN ./htpasswd -b ../config/admin.password  wasadmin sarasu10
 
+IT IS WORKING OR NOT WE CAN CHECK BY HITZ THE CONSOLE
+HTTP://I.P:80 (IHS STATIC PAGE OPENS)
+NUMBER  80  WILL BE HIDES ONLY FOR ROOT
+FOR USER
+HTTPS://I.P:8080(IHS STATIC PAGE OPENS
+
 
 
 
