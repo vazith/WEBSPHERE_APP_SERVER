@@ -36,7 +36,21 @@ TYPE: IBM HTTPS SERVER
 (OTHER TYPES : APACHE HTTP SERVER ,MICROSOFT INTERNET INFORMATION SERVICE(IIS), SUN JAVA SYSTEM WEBSERVER .DOMHINO WEB IBM HTTP SERVER
 HTTP SERVER Zos )
 NEXT
- Select 	Template Name 	 Type 	          Description
+
+Select   	Template Name 	 Type 	            Description
   .      	 IHS 	          System 	       THE IHS Web Server Template 
+NEXT 
 PORT : 80 FOR (ROOT) 
 PORT : 8080 FOR (USER)
+Information required Web server installation location 
+/opt/IBM/HTTPServer
+Information required Plug-in installation location
+/opt/IBM/WebSphere/Plugins
+Application mapping to the Web server (all , none ) selecet all
+SUMMARY OF ACTIONS
+FINISH
+CLICK TICK MARK  ON CREATED WEBSERVER REVIEW AND SYNCRONIZE IT
+
+
+
+
