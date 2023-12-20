@@ -65,6 +65,20 @@ SHOW LIKE THESE
 InformationPLGC0048I: The propagation of the plug-in configuration file is complete for the Web server. vazithCell02.vazithNode03.IHS-SEREVER.
 InformationPLGC0074I: The node is already synchronized and the plug-in configuration file is already propagated. vazithCell02.vazithNode03.)
 
+--IN CLI---
+GO TO /opt/IBM/HTTPServer/conf 
+vi httpd.conf
+ADD THIS 
+(LoadModule was_ap22_module /opt/IBM/HTTPServer/modules/mod_was_ap22_http.so
+WebspherePluginConfig /opt/IBM/WebSphere/Plugins/config/IHS_SERVER/plugin-cfg.xml)
+vi admin.config
+GIVE ADMIN PORT IN FIRST AND LAST LINE adminport:8008
+AND 
+USER BANDARU
+GROUP BANDARU ---> FOR (ROOT) FOT USER WE HAVE TO MENTION USERNAME
+
+
+
 
 
 
