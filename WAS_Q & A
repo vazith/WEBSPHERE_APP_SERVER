@@ -10,3 +10,10 @@ PERFORMANCE OF APPLIACTION WITH HIGH SCALABLITY AND HIGH AVAILABLITY
 2. IF WE TRIED TO CREATE A SERVER WITHOUT ADDING A NODE IT SHOWS ?
 Error There are no nodes that support servers in the configuration. Use the addNode command from the Nodes collection orfrom the 
 command line before attempting to create a new server.
+
+3. where we can remove password of DMGR CONSOLE if we need ?
+path: /opt/IBM/WebSphere/AppServer/profiles/Dmgr02/config/cells/vazithCell01
+vi security.xml 
+4th line (change enabled="false")
+REFERANCE ---> (" useLocalSecurityServer="true" useDomainQualifiedUserNames="false" enabled="true" )
+IT REMOVE THE PASSWORD FOR DMGR CONSOLE 
