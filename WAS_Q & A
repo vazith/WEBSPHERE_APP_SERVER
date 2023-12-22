@@ -17,3 +17,23 @@ vi security.xml
 4th line (change enabled="false")
 REFERANCE ---> (" useLocalSecurityServer="true" useDomainQualifiedUserNames="false" enabled="true" )
 IT REMOVE THE PASSWORD FOR DMGR CONSOLE 
+
+4. WHEN WE START THE DMGR IF ANY CASE THE DMGR WAS NOT STARTED IF ANY ERROR 
+PATH:/OPT/IBM/WEBSPHERE/APPSERVER/PROFILES/DMGR/LOGS
+    IT CREATED (STARTSERVER.LOG) INSIDE IT SHOW THAT ERROR
+
+5. WHERE DMGR STARTED TIME RECORDS IN LOGS ?
+path:/opt/IBM/WebSphere/AppServer/profiles/DMERE/logs/dmgr
+vi SystemError.log 
+with mention of 
+************ Start Display Current Environment ************
+shows(when the dmgr started with date and time)
+************* End Display Current Environment *************
+
+6. WHEN WE HITZ THE DMGR CONSOLE WITH DEFAULT PORTS IT AUTOMATICALLY HITZ THE CONSOLE WITH SECURE PORTS
+  WHERE IT ALL CERTIFICATEES STORED ?
+PATH:/opt/IBM/WebSphere/AppServer/profiles/DMERE/etc
+clientCert.arm              DummyClientKeyFile.jks    DummyServerKeyFile.jks    key.p12         trust.p12
+DataPower-root-ca-cert.pem  DummyClientTrustFile.jks  DummyServerTrustFile.jks  serverCert.arm
+--> CERTIFICATES WAS IN (clientcert.arm , serverCert.arm, DataPower-root-ca-cert.pem )
+
