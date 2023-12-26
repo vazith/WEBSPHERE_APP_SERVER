@@ -122,11 +122,7 @@ Maximum JVM heap size 	 0 MB 	 768 MB
                     
 --------------------------------------------------------------------------------------
               RESOURCES > Queue connection factories
-                       |Approximate total message size (including headers)
-626 
-	 Bytes
-	Information required Displayable message body size
- Bytes 
+                       |
                        V
               SELECT SCOPE : VAZITHNODE01 ( NODE )
                        |
