@@ -2,6 +2,8 @@ ____ JMS _____
  FIRST CREATED ONE SERVER WITH TARGETED ONE NODE 
                |
                v
+---------( BUS CREATION ) --------
+
    SERVICE INTEGARTION > BUSES 
              ( OR ) 
     SECURITY > BUS SECURITY 
@@ -12,7 +14,7 @@ ____ JMS _____
                V
 Configure the attributes of your new bus.
    Enter the name for your new bus. 
-    BUSNAME : BUS1
+    BUSNAME : JMS
 ENABLE( TICK MARKS ) BUS SECURIY 
               |
               v
@@ -71,24 +73,130 @@ Create a new security domain
                             |
                             V
                           FINISH
+                             |
+                             V
+                  CLICK ON CRETED BUS MENBER
+                             |
+                             V
+               RIGHT SIDE : CLICK ON BUS MENBER
+                            |
+                            V
+                           ADD
+                            |
+                            V
 
+ Choose the server, cluster or WebSphere MQ server to add to the bus
+           (.)Server 	: VAZITHNODE10
+	            Cluster 	: NONE
+	 WebSphere MQ server : NONDE                                
+                             |
+                             V
+Choose the type of message store for the persistence of message state
+     (.)File store
+        Data store 
+                            |
+                            V
+Tune performance parameters
 
+To improve performance of messaging within the application server, the proposed Java Virtual Machine settings are advised. By default the initial and maximum JVM settings will remain unchanged, select the 'Change heap sizes' checkbox to modify the settings to the proposed values. On machines with low amounts of physical memory size or large numbers of application server instances, it maybe necessary to reduce the proposed values accordingly.
+(TICK BOX )Change heap sizes ( WE ARE NOT ENABLE THIS PARAMETER)
+  	Current heap sizes 	Proposed heap sizes
+Initial JVM heap size 	 0 MB 	 768 MB
+Maximum JVM heap size 	 0 MB 	 768 MB 
+                            |
+                            V
+                         SUMMARY 
+                            |
+                            v
+                          FINSH
+                            |
+                            V
+                     REVIEW ( Synchronize)
+                    
+--------------------------------------------------------------------------------------
+              RESOURCES > Queue connection factories
+                       |
+                       V
+              SELECT SCOPE : VAZITHNODE01 ( NODE )
+                       |
+                       V
+                 CLICK ON NEW
+                       |
+                       V
+ Select the provider with which to create the Queue connection factory. 
+The following providers support the selected resource type and are available at the selected scope.   < --- ( JMS PROVIDER )
 
+(.) Default messaging provider 
+    WebSphere MQ messaging provider
+                        |
+                        V
+ IN ADMINSTARTION ( GENDREL PROPERTIES )
+    NAME : VAZITH
+    JNDI : ABCDE
+IN  CONNECTIONS
+     BUS: JMS ( SELECT BEFORE CREATED BUS )
 
+Quality of Service
+     Nonpersistent message reliability
+      DEFAULT : EXPRESS NONPERSISTENT
+( OTHER TYPES : BEST EFFORT Nonpersistent, RELIABLE Nonpersistent , RELIABLE Persistent
+   ASSURED Persistent , AS BUS DESTINATION )
 
+Persistent message reliability 
+   DEFAULT : RELIABLE Persistent
+( OTHER TYPES : BEST EFFORT Nonpersistent, RELIABLE Nonpersistent , RELIABLE Persistent
+   ASSURED Persistent , AS BUS DESTINATION )
+                                 |
+                                 V
+                             OK ( OR ) APPLY
+                                 |
+                                 V
+                         REVIEW ( Synchronize)
+------------------------------------------------------------------------------------------------
 
+              RESOURCES > Queue
+                    |
+                    V
+ SELECT SCOPE : VAZITHNODE01 ( NODE )
+                       |
+                       V
+                 CLICK ON NEW
+                       |
+                       V
+ Select the provider with which to create the Queue connection factory. 
+The following providers support the selected resource type and are available at the selected scope.   < --- ( JMS PROVIDER )
 
+(.) Default messaging provider 
+    WebSphere MQ messaging provider
+                        |
+                        V
+IN ADMINSTARTION ( GENDREL PROPERTIES )
+    NAME : VAJITH
+    JNDI : EFGHI
+IN  CONNECTIONS
+     BUS: JMS ( SELECT BEFORE CREATED BUS )
+Queue name 
+SYSTEM.Exception.Destination.vazithNode01.JMS-JMS ( THIS LINK WAS CREATED WHEN WE ADD BUSMENBER IN BUS 
+                                                    IT SHOWS IN CLICK ON CREATED BUS ..RIGHT SIDE CLICK ON
+                                                     DESTINATIONS ..THERE IT SHOWS )
+                          |
+                          V
+                      OK ( OR ) APPLY
+                          |
+                          V
+                   REVIEW ( Synchronize)
 
+----------------------------------------------------------------------------------------------------------------
 
+NOW DEPLOY ONE APPLICATION TO THE SELECT DEDICATED NODE 
+START THE APPLICATION ( sEND.JMS )
+HIT THAT APPLICATION BY ITS DEFAULT PORT
+MENTION ( JNDI NAMES ):
+                   QUENE NAME: EFGHI
+ QUENE CONNECTON FACTORY NAME : ABCDE
+                      MESSAGE :SEND ONE MSG IN THIS BOX ( HELLO )
 
-
-
-
-
-
-
-
-
+------------------------------------------------------------------------------------------------------
 
 
 
