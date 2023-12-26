@@ -45,7 +45,8 @@ Enabling bus security ensures the following:
 It does not ensure the confidentiality and integrity of the data, for this secure transports are required. 
 This can be achieved either by having a secure network, or by requiring that clients, and messaging engines 
 make use of encrypted transports (i.e. SSL) when communicating. 
-In order to force clients to use encrypted transports the bus can be configured to require clients use SSL.
+In order to force clients to use encrypted transports the bus can be configured to require clients use SSL.ENA
+   ENABLED  -->    Require clients use SSL protected transports 
                          |
                          V
                         NEXT 
