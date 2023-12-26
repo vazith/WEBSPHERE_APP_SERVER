@@ -24,12 +24,90 @@ required Password: SARASU10
        REVIEW(SYNCRONIZE)
 A TABLE LINK CREATED LIKE THIS (  vazithCellManager02/VAZITH )
 
------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
+RESOURCES > JDBC > JMS PROVIDER
+               |
+               V
+SELECT SCOPE (NODE) : VAZITHNODE01
+               |
+               V
+              NEW
+               |
+               V
+Scope: 
+cells:vazithCell02:nodes:vazithNode01 
+Database type : DB2
+( OTHER TYPES : DERBY, INFORMIX, SYBASE, ORACLE, SQL SERVER, USER DEFINED)
+Provider type : DB2 UNIVERSAL JDBC DRIVER PROVIDER
+(OTHER TYPES : DB2 UDB for ISERIES(toolbox), DB2 UDB FOR ISERIES(native), DB2 USING IBM JCC DRIVER )
+Implementation type : CONNECTION POOL DATA SOURCE
+( OTHER TYPES :XA DATA SOURCE )
+Name : DB2 Universal JDBC Driver Provider
+Description : One-phase commit DB2 JCC provider that supports JDBC 3.0. Data sources that use this 
+provider support only 1-phase commit processing, unless you use driver type 2 with the application
+server for z/OS.If you use the application server for z/OS, driver type 2 uses RRS and supports
+2-phase commit processing.
+                              |
+                              V
+ Directory location for "db2jcc.jar, db2jcc_license_cisuz.jar" which is saved as WebSphere  variable 
+${DB2UNIVERSAL_JDBC_DRIVER_PATH}  : /HOME/db2jcc.jar
 
+Native library path
+Directory location which is saved as WebSphere variable 
+${DB2UNIVERSAL_JDBC_DRIVER_NATIVEPATH} : /OPT/IBM/DB2/V11.1 ( OR ) V10.5
+                              |
+                              V
+                           FINISH 
+                              |
+                              V
+                       REVIEW(SYNCRONIZE)
 
+---------------------------------------------------------------------------------------------
 
+RESOURCES > JDBC > DATA SOURCE
+Scope
+cells:vazithCell02:nodes:vazithNode01 
+Data source name : DB2
+required JNDI name : ABCDDE
+                              NEXT
+                               |
+                               V
+                 Create new JDBC provider
+             (.) Select an existing JDBC provider 
+               (JDBC UNIVERSAL JDBC DRIVER PROVIDER )
 
+( IN JDBC PROVIDER WE CREATED ONE JDBC PROVIDER .THAT PROVIDER WE SELECTED HERE )
+( BY USING CREATE NEW JDBC PROVIDER WE CAN CREATE PROVIDER HERE ALSO)
+
+                                NEXT
+                                 |
+                                 V
+                         Driver type 	: 4
+                         ( OTHER TYPES : 2 )
+                        Database name 	: MAHESH
+                         Server Name   : SERVER_JDBC
+                        Port number 	:  50000
+                                    NEXT
+                                     |
+                                     V
+                 Select the authentication values for this resource.
+Component-managed authentication alias
+VAZITHCELLMANAGER02/VAZITH
+Mapping-configuration alia
+NONE
+Container-managed authentication alias 
+NONE                            NEXT
+                                 |
+                                 V
+                               FINISH
+                                 |
+                                 V
+                             REVIEW ( SYNCRONIZE )
+
+CLICK ON CREATED DATABSE AND CLICK ON TEST CONNECTION 
+IF TEST CONNECTION WAS SUCCESSFUL ..DATABSE IS READY
+--------------------------------------------------------------------------------------------------------
 
 
 
