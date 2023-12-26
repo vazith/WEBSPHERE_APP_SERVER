@@ -88,7 +88,7 @@ Create a new security domain
                             V
 
  Choose the server, cluster or WebSphere MQ server to add to the bus
-           (.)Server 	: VAZITHNODE10
+           (.)Server 	: VAZITHNODE10.SERVER01
 	      Cluster 	: NONE
     WebSphere MQ server : NONDE                                
                              |
