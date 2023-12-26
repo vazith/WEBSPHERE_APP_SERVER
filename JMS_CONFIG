@@ -88,8 +88,8 @@ Create a new security domain
 
  Choose the server, cluster or WebSphere MQ server to add to the bus
            (.)Server 	: VAZITHNODE10
-	            Cluster 	: NONE
-	 WebSphere MQ server : NONDE                                
+	      Cluster 	: NONE
+    WebSphere MQ server : NONDE                                
                              |
                              V
 Choose the type of message store for the persistence of message state
