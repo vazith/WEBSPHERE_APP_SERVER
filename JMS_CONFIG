@@ -203,7 +203,33 @@ MENTION ( JNDI NAMES ):
                       MESSAGE :SEND ONE MSG IN THIS BOX ( HELLO )
 
 ------------------------------------------------------------------------------------------------------
+SENDING MESSAGES WAS STORED IN 
+ BUS > DESTINATION 
+( SELECT THE CREATED LINK )  _SYSTEM.Exception.Destination.vazithNode01.server1-bus1 
+                         |
+                         V
+RIGHTSIDE SHOWS CLICK ON :QUENE POINT
+                        |
+                        V
+(AGAIN LINK SHOWS:CLICK ON IT) SYSTEM.Exception.Destination.vazithNode01.server1-bus1@vazithNode01.server1-bus1 
+ ANOTHEIR NAME IS QUENE DEPTH ( OPTIONAL NAME )                
+                        |
+                        V
+   DEFALUT IN : (CONFIGURATIONS) CLICK ON (RUN TIME)
+                        |
+                        V
+                    MESSAGES
+                        |
+                        V
+BOX WITH LINK ( MESSAGE ID : 0534584BF70E5604_1 ) CLICK ON THIS 
+                        |
+                        V
+                 MESSAGE BODY
+                       |                           
+                       V                                
+             SHOWS THE SEND MESSAGES ( HERE MSGES STORES )
 
-
-
-
+(Approximate total message size (including headers)
+ 626   Bytes
+ Information required Displayable message body size
+ 626  Bytes ) IT SHOWS ABOVE THE SEND MESSAGES BOX WE CAN CHANGE THE SIZE
