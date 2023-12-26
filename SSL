@@ -1,0 +1,114 @@
+_____________SSL______________
+
+GO TO THIS PATH
+/opt/IBM/HTTPServer/bin
+RUN THIS CMD : ./IKEYMAN 
+
+-----GUI(OPEN)--------
+LEFT SIDE PRESS ON KEY (or) EMPTY FILE SYMBOL
+A BOX WAS OPENS 
+                 NEW
+________________________________________________
+     KEY DATABASE TYPE : CMS 
+    (OTHER TYPES : (JKS , JCEKS ,PCKS12 )
+     FILE NAME : KEY.KDB          [ BROWSE ] 
+     LOCATION : /opt/IBM/HTTPServer/bin/
+                    | 
+                    V
+                   NEXT
+                    |
+                    V 
+              PASSWORD PROMPT
+___________________________________________
+             PASSWORD:SARASU10
+    CONFIRM PASSWORD : SARASU10
+TICK MARK OF EXPIARY DATE   ( WE ARE NOT USED )
+TICK MARK ON  STACK PASSWORD TO A FILE 
+                    |
+                    v
+                   OK 
+                    |
+                    V
+             KEYDATABASE CONTENT
+1. PERSONAL CERTIFICATES
+2. SINGER CERTIFICATES
+3.PERSONAL CERTIFICATE REQUEST
+
+CLICK ON PERSONAL CERTIFICATES 
+RIGHT SIDE SHOWS (NEW SELF-SIGNED) CLICK ON IT 
+                     |
+                     v
+               NEW PROMPT OPENS( FILL THE DETAILS )
+            KEY LABEL : VAZITH
+            VERSION   : X509V3
+ (OTHER TYPES : X509V2 , X509V1)
+            KEYSIZE   : 1024
+ (OTHER TYPES :512 , 2048 ,4096) 
+ SIGNATURE ALOGARTHAM  : RSA
+  (OTHER TYPE : DSA )
+       COMMOM NAME : VAZITH.EIDIKOINTERNAL.COM
+       ORGANZITION : EIDIKO
+ORGANIZATION UNIT  : EIDIKO.COM
+       LOCALITY    : HYD
+         STATE     : TELANAGANA
+        ZIPCODE    : 50081
+        COUNTRY    : INDIA
+    VALIDITY PERIOD : 365 DAYS ( DEFAULT)
+SUBJECT ALTERNATIVE NAMES
+ EMAIL ADRESS:
+ IP  ADRESS 
+ DNS NAME 
+                    |
+                    V
+                    ok
+                    |
+                    v
+GO TO TERMINAL 3 FILES WAS CREATED ( key.kdb ,key.rdb , key.sth)
+                    |
+                    v
+    /opt/IBM/HTTPServer/CONFIG
+      OPEN : VI HTTPD.CONFIG
+                   |
+                   v
+search :/ssl  
+
+(#LoadModule ibm_ssl_module modules/mod_ibm_ssl.so
+ #Listen 443
+ #<VirtualHost *:443>
+ #SSLEnable
+ #</VirtualHost>
+ #KeyFile /opt/IBM/HTTPServer/bin/key.kdb
+ #SSLDisable
+ # End of example SSL configuration)
+
+REMOVE # UTILL 6 LINES 
+
+                    |
+                    V
+  GO TO THIS PATH :/opt/IBM/HTTPServer/bin
+                    |
+                    V
+              ./APACHECTL -K STOP
+              ./ADMINCTL STOP 
+                    |
+                    v
+              ./APACHECTL -K START
+              ./ADMINCTL START 
+
+----------------------------------------------------
+HITZ THE ADMIN CONSOLE USING 
+
+   HTTPS: ip (or) hostname :443
+
+ADMIN CONSOLE OF IHS OPEN AND OPEN WITH SECURE CONNECTIONS
+-------------------------------------
+
+
+
+
+
+
+
+
+
+
