@@ -84,10 +84,11 @@ required JNDI name : ABCDDE
                                  |
                                  V
                          Driver type 	: 4
-                         ( OTHER TYPES : 2 )
+                         ( OTHER TYPES : 2 )               
                         Database name 	: MAHESH
                          Server Name   : SERVER_JDBC
                         Port number 	:  50000
+                                                           
                                     NEXT
                                      |
                                      V
@@ -107,6 +108,9 @@ NONE                            NEXT
 
 CLICK ON CREATED DATABSE AND CLICK ON TEST CONNECTION 
 IF TEST CONNECTION WAS SUCCESSFUL ..DATABSE IS READY
+
+DEFAULT PORT 0F db2    : 50000
+DEFAULT PORT OF ORACLE : 1521
 --------------------------------------------------------------------------------------------------------
 
 
