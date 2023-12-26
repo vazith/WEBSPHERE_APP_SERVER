@@ -1,1 +1,61 @@
+____________JDBC_CONFIG______________
+
+IN CONSOLE 
+   SECURITY > GLOBAL SECURITY 
+              |
+              V
+(IN RIGHTSIDE SHOWS)
++ Java Authentication and Authorization Service
+       Application logins
+       System logins
+   (.) J2C authentication data  ( SELECT THIS )
+               | 
+               V
+( TABLE SHOWS ) NEW
+           Alias : VAZITH
+         User ID : WASADMIN
+required Password: SARASU10
+      Description: n/a
+               | 
+               V
+      OK ( OR ) APPLY 
+               |
+               V
+       REVIEW(SYNCRONIZE)
+A TABLE LINK CREATED LIKE THIS (  vazithCellManager02/VAZITH )
+
+-----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
