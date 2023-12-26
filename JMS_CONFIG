@@ -1,1 +1,95 @@
+____ JMS _____
+ FIRST CREATED ONE SERVER WITH TARGETED ONE NODE 
+               |
+               v
+   SERVICE INTEGARTION > BUSES 
+             ( OR ) 
+    SECURITY > BUS SECURITY 
+               |
+               v
+          CLICK NEW 
+               |
+               V
+Configure the attributes of your new bus.
+   Enter the name for your new bus. 
+    BUSNAME : BUS1
+ENABLE( TICK MARKS ) BUS SECURIY 
+              |
+              v
+            NEXT 
+             |
+             v
+(IT SHOWS) Introduction
+
+This wizard assists you in securing your bus.
+
+In order to enable bus security you need to have administration security enabled for the cell the bus is defined in.
+
+If this has not yet been done, clicking next will launch the Security Configuration Wizard for the cell.
+Once that has been configured that wizard will return to this one, so bus security can be configured.
+                |
+                V
+              NEXT
+                |
+                V
+(IT SHOWS ) Specify transport level security
+
+Enabling bus security ensures the following:
+
+   . Client applications can authenticate to the bus
+   . The authorization policy for the bus is enforced
+   . Peer messaging engines need to authenticate to each other
+
+It does not ensure the confidentiality and integrity of the data, for this secure transports are required. 
+This can be achieved either by having a secure network, or by requiring that clients, and messaging engines 
+make use of encrypted transports (i.e. SSL) when communicating. 
+In order to force clients to use encrypted transports the bus can be configured to require clients use SSL.
+                         |
+                         V
+                        NEXT 
+                         |
+                         V
+ You are configuring a bus that consists of bus members that are all Version 7 and above. You can therefore configure the bus to use a security domain other than the global security domain.
+
+If the bus uses a domain other than the global security domain then you cannot add members that are earlier than version 7 to this bus.
+
+
+   Use the global security domain
+
+
+(.)Inherit the cell level security domain
+
+ 
+ ( Use an existing security domain
+  NONE )
+    
+Create a new security domain
+
+                            |
+                            V
+                          SUMMARY
+                            |
+                            V
+                          FINISH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
