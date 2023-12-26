@@ -98,7 +98,12 @@ Choose the type of message store for the persistence of message state
                             V
 Tune performance parameters
 
-To improve performance of messaging within the application server, the proposed Java Virtual Machine settings are advised. By default the initial and maximum JVM settings will remain unchanged, select the 'Change heap sizes' checkbox to modify the settings to the proposed values. On machines with low amounts of physical memory size or large numbers of application server instances, it maybe necessary to reduce the proposed values accordingly.
+To improve performance of messaging within the application server, 
+the proposed Java Virtual Machine settings are advised. By default the initial and maximum
+JVM settings will remain unchanged, select the 'Change heap sizes' checkbox to modify the settings to the proposed values.
+On machines with low amounts of physical memory size or large numbers of application server instances, 
+it maybe necessary to reduce the proposed values accordingly.
+
 (TICK BOX )Change heap sizes ( WE ARE NOT ENABLE THIS PARAMETER)
   	Current heap sizes 	Proposed heap sizes
 Initial JVM heap size 	 0 MB 	 768 MB
