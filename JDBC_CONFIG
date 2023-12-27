@@ -1,5 +1,7 @@
 ____________JDBC_CONFIG______________
 
+( NOTE : DB2 , & ORACLE BOTH HAVE MINOR CHANGES OBSERVE CAREFULLY )
+
 IN CONSOLE 
    SECURITY > GLOBAL SECURITY 
               |
@@ -113,31 +115,107 @@ DEFAULT PORT 0F db2    : 50000
 DEFAULT PORT OF ORACLE : 1521
 --------------------------------------------------------------------------------------------------------
 
+____________________ORACLE_DATABSE____________________________
 
+                
 
+IN CONSOLE 
+   SECURITY > GLOBAL SECURITY 
+              |
+              V
+(IN RIGHTSIDE SHOWS)
++ Java Authentication and Authorization Service
+       Application logins
+       System logins
+   (.) J2C authentication data  ( SELECT THIS )
+               | 
+               V
+( TABLE SHOWS ) NEW
+           Alias : VAZITH
+         User ID : WASADMIN
+required Password: SARASU10
+      Description: n/a
+               | 
+               V
+      OK ( OR ) APPLY 
+               |
+               V
+       REVIEW(SYNCRONIZE)
+A TABLE LINK CREATED LIKE THIS (  vazithCellManager02/VAZITH )
 
+--------------------------------------------------------------------------------
 
+RESOURCES > JDBC > JDBC PROVIDER
+                        |
+                        V
 
+ Scope :
+cells:maheshwasCell01:nodes:maheshwasNode01 
+Database type  : ORACLE
+Provider type  : ORACLE JDBC DRIVER
+( OTHER TYPE : ORACLE JDBC DRIVER UDP, SHOW DEPRECATED DRIVERS )
+ Implementation type : CONNECTIONPOOL DATA SOURCE
+ (OTHER TYPES : XA DATA SOURCES )
+ Name : Oracle JDBC Driver
+Description : Oracle JDBC Driver
+                          NEXT 
+                            |
+                            V
+ Class path: ${ORACLE_JDBC_DRIVER_PATH}/ojdbc8.jar
+ Directory location for "ojdbc8.jar" which is saved as WebSphere variable 
+${ORACLE_JDBC_DRIVER_PATH} : U01/APP/ORACLE/PRODUCT/19.0.0/DBHOME_01/JDBC/LIB/OJDBC8.JAR 
+                             |
+                             V
+                            NEXT
+                             |
+                             V
+                           SUMMARY
+                             |
+                             V
+                           FINISH
+                             |
+                             V
+                        REVIEW( SYNCRONIZE) IT
+-----------------------------------------------------------------------------------------------------------
 
+RESOURCES > JDBC > DATA SOURCE
+Scope
+cells:vazithCell02:nodes:vazithNode01 
+Data source name : ORACLE
+required JNDI name : DESKTOP
+                              NEXT
+                               |
+                               V
+                 Create new JDBC provider
+             (.) Select an existing JDBC provider 
+               (ORACLE JDBC DRIVER )
+                              NEXT
+                                |
+                                V
+                     Name 	       Value 
+                   * URL          jdbc:oracle:thin:@//192.168.1.212:1521/orcl
+                   Data store helper class name :
+                   ORACLE DATASTORE 11G HELPER
+                                 NEXT
+                                   |
+                                   V
+Select the authentication values for this resource.
+Component-managed authentication alias
+VAZITHCELLMANAGER02/JAVEED              ----> ( IT WAS LINK WHICH WE CREATED IN GLOBAL SECURITY )
+Mapping-configuration alia
+NONE
+Container-managed authentication alias 
+NONE                            NEXT
+                                 |
+                                 V
+                               FINISH
+                                 |
+                                 V
+                             REVIEW ( SYNCRONIZE )
 
+                                    
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+CLICK ON CREATED DATABSE AND CLICK ON TEST CONNECTION 
+IF TEST CONNECTION WAS SUCCESSFUL ..DATABSE IS READY
 
 
