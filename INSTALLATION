@@ -67,6 +67,7 @@ by using above command we are adding repository to the installmanger
 
 ✻ ./imcl listAvailablepackages -repositories /home/ND/repository.config
 [after run the above cmd it give one ND --> com.ibm.websphere.ND.v85_8.5.0.20120501_1108]
+( imcl fullform: installationManager command Line )
 
 ➤ by using below command we are installing the “WAS”
 
