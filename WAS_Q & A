@@ -64,6 +64,41 @@ WE CHANGE SYNCHRONIZATION INTERVAL TIME ( DEFAULT TIME : 1 MIN )
     MINIMUM HEAP SIZE  248 MB
 
 
+9. IN WEBSPHERE APPLICATION SERVER AS I ADMIN ... WHAT THE REQUIREDMENT I TAKE FROM THE 
+       CLIENT FOR JDBC CONNECTIVITY
+
+
+To establish JDBC connectivity as a WebSphere Application Server admin, you'll 
+need to gather specific requirements from the client.  Here's a breakdown of what to ask for:
+
+1. Database Information:
+
+    Database type: MySQL, Oracle, DB2, etc.
+    Database server hostname or IP address: Where the database resides.
+    Database name: The specific database to connect to.
+    Database port: The port on which the database listens (usually 3306 for MySQL, 1521 for Oracle, etc.).
+    Driver type: JDBC driver required for the chosen database (e.g., MySQL Connector/J, Oracle JDBC driver).
+    Driver JAR location: Download or provide the path to the JDBC driver JAR file.
+
+2. Authentication Details:
+
+    Database username: User with access to the database.
+    Database password: Password for the database user.
+    Authentication schema (optional): Any specific authentication schemes like LDAP or Kerberos (if not using basic username/password).
+
+3. Connection Pool Settings:
+
+    Initial pool size: Initial number of database connections to create in the pool.
+    Min pool size: Minimum number of connections to maintain in the pool even when idle.
+    Max pool size: Maximum number of connections allowed in the pool simultaneously.
+    Max idle time: How long an idle connection can stay in the pool before being closed.
+    Other pool settings (optional): Timeout limits, retry attempts, etc.
+
+4. Application Specific Needs:
+
+    Data source name: The name you'll assign to the JDBC connection for reference within your application.
+    Transaction isolation level: Whether transactions should be isolated, read-committed, etc.
+    Other application-specific settings: Any additional customization required for the connection based on your application's needs.
 
 
 
