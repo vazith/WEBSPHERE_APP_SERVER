@@ -101,7 +101,10 @@ need to gather specific requirements from the client.  Here's a breakdown of wha
     Other application-specific settings: Any additional customization required for the connection based on your application's needs.
 
 
-
+9. HOW CAN REMOVE DMGR PASSOWRD WITHOUT USING SECURITY.XML FILLE ..?
+CD PATH /OPT/ibM/WEBSPHERE/APPSERVER/PROFILES/DMGR/BIN
+RUN THIS COMMANDS : wsadmin.sh -conntype NONE
+                  >securityoff
 
 
 
