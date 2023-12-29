@@ -1,0 +1,63 @@
+_________________OTHER COMPONETS IN WEBSPHERE____________________________
+
+
+-Asynchronous Beans:
+      1.Timer Managers
+      2.Work Managers:
+
+
+
+Asynchronous Beans:
+
+    Purpose: Enable execution of tasks in the background, separately from the main thread of execution.
+    Benefits: Improve responsiveness, avoid blocking primary threads, handle long-running operations efficiently.
+    Implementation: Typically defined as EJBs using either the @Asynchronous annotation or the javax.ejb.Asynchronous interface.
+
+Timer Managers:
+
+    Purpose: Schedule and manage timer-based events within WAS.
+    Capabilities:
+        Create timers to trigger tasks at specific times or intervals.
+        Manage timer persistence for reliability.
+        Handle timer expiration events and invoke associated logic.
+
+Work Managers:
+
+    Purpose: Control how tasks are allocated to threads and manage thread pool resources.
+    Key Features:
+        Define thread pools with specific configurations (size, priority, etc.).
+        Assign tasks to appropriate thread pools based on workload and priorities.
+        Manage thread life cycles and optimize resource usage.
+
+Application Example Using Work Manager:
+
+Scenario: A web application processing customer orders with different priority levels.
+
+Solution:
+
+    Define Work Managers:
+        Create two work managers: "highPriority" for urgent orders and "default" for regular orders.
+    Configure Thread Pools:
+        Assign more threads and higher priority to the "highPriority" work manager.
+    Submit Tasks:
+        When an order arrives, determine its priority and submit it to the appropriate work manager:
+            High-priority orders: WorkManager.getInstance("highPriority").schedule(orderProcessingTask)
+            Regular orders: WorkManager.getInstance("default").schedule(orderProcessingTask)
+    Manage Task Execution:
+        WAS allocates threads from the respective pools to execute tasks based on availability and priorities.
+
+Benefits of Using Work Manager:
+
+    Improved performance: Prevents bottlenecks by allocating resources efficiently.
+    Prioritized task execution: Ensures urgent tasks are handled promptly.
+    Enhanced control: Provides fine-grained management of thread usage and workload distribution.
+    Scalability: Can be adjusted to meet changing application demands.
+
+When to Use Work Manager:
+
+    Handling multiple long-running tasks concurrently.
+    Prioritizing tasks based on business needs.
+    Optimizing resource usage for different workloads.
+    Ensuring responsiveness under heavy load.
+    Managing background tasks for maintenance or cleanup operations.
+
