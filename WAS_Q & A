@@ -107,6 +107,71 @@ RUN THIS COMMANDS : wsadmin.sh -conntype NONE
                   >securityoff
 
 
+10. JVM RELATED ERRORS IN WEBSPHERE ...?
+
+1. Out of Memory Errors (OOMEs):
+
+    Causes:
+        Insufficient heap space allocated to the JVM.
+        Memory leaks in applications or third-party libraries.
+        Excessive object creation or large data structures.
+    Remedies:
+        Increase heap size (-Xmx parameter).
+        Analyze heap dumps to identify memory leaks.
+        Optimize application code for memory usage.
+        Consider using a memory profiler.
+
+2. ClassNotFoundException:
+
+    Causes:
+        Missing or inaccessible class files in the classpath.
+        Incorrect class loading configuration.
+        Dependency conflicts between libraries.
+    Remedies:
+        Ensure all required class files are present in the classpath.
+        Verify class loading configuration (parent-first vs. child-first).
+        Resolve any dependency conflicts.
+
+3. StackOverflowError:
+
+    Causes:
+        Infinite recursion or deeply nested function calls.
+        Large local variables or method parameters.
+    Remedies:
+        Refactor code to avoid excessive recursion or nesting.
+        Increase stack size (-Xss parameter) if necessary.
+
+4. OutOfMemoryError: PermGen space:
+
+    Causes:
+        Insufficient space for permanently loaded classes (in older Java versions).
+    Remedies:
+        Increase PermGen space (-XX:MaxPermSize parameter) for older Java versions.
+        Upgrade to Java 8 or later, which uses Metaspace instead of PermGen.
+
+5. NullPointerException:
+
+    Causes:
+        Attempting to access a null object reference.
+    Remedies:
+        Thoroughly debug application code to identify and fix null pointer issues.
+
+6. OutOfMemoryError: Java heap space:
+
+    Causes:
+        Insufficient heap space for object allocation.
+    Remedies:
+        Increase heap size (-Xmx parameter).
+        Analyze memory usage and optimize application code.
+
+7. OutOfMemoryError: Requested array size exceeds VM limit:
+
+    Causes:
+        Attempting to create an array larger than the JVM's maximum array size.
+    Remedies:
+        Consider alternative data structures or algorithms.
+        Increase the JVM's maximum array size (if supported).
+
 
 
 
