@@ -1,0 +1,112 @@
+Date : 3/4/2024
+Task By : Bandaru Sir 
+
+Task : 1
+-------------------------
+1. In Was While Doing Jms .. we are selecting Stores is File store & data store
+   If we use data store where it store messages in database ...? 
+   IF we use File store where it store Jms messages .... ?
+
+Ans. If create one custome node and and server with name of data_store for removeing
+      confusion we give server name datastore .. After that i depolyed one application 
+      (SendJms)Application
+     If we are selecting the datastore ..before that we have one active database ..without 
+     database we can't select the data_Store 
+
+     First add one database To Was ( configuration )
+ -----------------------------------------------------
+   Click On Security > Global Security 
+                    |
+                    V
+   (Right side) Authecation : Click on : Java Authecation & authorize Servive
+    Shows   : 1 . Application Logins
+              2 . System Logins
+              3 . j2c Authecation data 
+    Click on ( J2c Authecation data )
+             Click on New
+                    |
+                    V
+Fill The parameters
+--------------------
+           Give  Alias Name : datastore
+           User Id          : db2inst1 ( data_base userName)
+           Password         : sarasu10  (password of databse)
+                Click  on ok ( review : syncronize it )
+                        |
+                        V
+    Now  
+        Click On Resources > Jdbc > Jdbc Provider
+               select Scope : Node : vazithnode01 datastore ( select server )
+                Click on New 
+   Fill the parameters
+------------------------
+          Select Database Type :db2 
+          selct Provider Type  :db2 universal jdbc provider
+     select Impelemenation Type: connection pool datasource
+                   Clck on Next
+                         |
+                         V
+          Now
+          By using sftp Coonect To db2 image .. Go To this path /opt/ibm/db2/V10.5/Java 
+          in that path contain jar fles --> db2jcc.jar ...
+          get above jar file in was running Image To this path /home/bandaru 
+In Console
+-------------
+            Mention Path of ${DB2UNIVERSAL_JDBC_DRIVER_PATH}
+---->        /home/bandaru
+            mention path of${DB2UNIVERSAL_JDBC_DRIVER_NATIVEPATH}
+---->       /opt/ibm/db2/V10.5/java
+                         Click On Finish
+                               |
+                               V
+                  
+  Now Again
+                 Click On Resources > Jdbc > dataSource
+           select Scope : Node : vazithnode01 datastore ( select server )
+     Fill The Parameters
+ ------------------------
+                DataSOurce Name : datastore
+                Jndi Name       : bat
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
