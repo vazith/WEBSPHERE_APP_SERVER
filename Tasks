@@ -111,9 +111,252 @@ In Console
                             
 
 
+Now we have create Jms 
+
+---------( BUS CREATION ) -------------
+
+   SERVICE INTEGARTION > BUSES 
+             ( OR ) 
+    SECURITY > BUS SECURITY 
+               |
+               v
+          CLICK NEW 
+               |
+               V
+Configure the attributes of your new bus.
+   Enter the name for your new bus. 
+    BUSNAME : JMS
+ENABLE( TICK MARKS ) BUS SECURIY 
+              |
+              v
+            NEXT 
+             |
+             v
+(IT SHOWS) Introduction
+
+This wizard assists you in securing your bus.
+
+In order to enable bus security you need to have administration security enabled for the cell the bus is defined in.
+
+If this has not yet been done, clicking next will launch the Security Configuration Wizard for the cell.
+Once that has been configured that wizard will return to this one, so bus security can be configured.
+                |
+                V
+              NEXT
+                |
+                V
+(IT SHOWS ) Specify transport level security
+
+Enabling bus security ensures the following:
+
+   . Client applications can authenticate to the bus
+   . The authorization policy for the bus is enforced
+   . Peer messaging engines need to authenticate to each other
+
+It does not ensure the confidentiality and integrity of the data, for this secure transports are required. 
+This can be achieved either by having a secure network, or by requiring that clients, and messaging engines 
+make use of encrypted transports (i.e. SSL) when communicating. 
+In order to force clients to use encrypted transports the bus can be configured to require clients use SSL.ENA
+   ENABLED  -->    Require clients use SSL protected transports 
+                         |
+                         V
+                        NEXT 
+                         |
+                         V
+ You are configuring a bus that consists of bus members that are all Version 7 and above. You can therefore configure the bus to use a security domain other than the global security domain.
+
+If the bus uses a domain other than the global security domain then you cannot add members that are earlier than version 7 to this bus.
 
 
+   Use the global security domain
 
+
+(.)Inherit the cell level security domain
+
+ 
+ ( Use an existing security domain
+  NONE )
+    
+Create a new security domain
+
+                            |
+                            V
+                          SUMMARY
+                            |
+                            V
+                          FINISH
+Now Click on created BUS
+--------------------------
+right side Shows : bus member 
+
+                  CLICK ON CRETED BUS MENBER
+                             |
+                             V
+               RIGHT SIDE : CLICK ON BUS MENBER
+                            |
+                            V
+                           ADD
+                            |
+                            V
+
+ Choose the server, cluster or WebSphere MQ server to add to the bus
+           (.)Server 	: VAZITHNODE10.SERVER01
+	          Cluster 	: NONE
+     WebSphere MQ server : NONDE                                
+                             |
+                             V
+Choose the type of message store for the persistence of message state
+                 Click on datastore 
+                 Click on Next
+                            |
+                            V
+            click * Use existing data source
+ Fill the parameters 
+---------------------
+        1.   Data source JNDI name : bat -->     ( This Jndi name is datasource jndi name                   )
+                                                 ( where we mention this name before creation of datasource )
+        2.   Schema name : vazith ( this named schema was created in database directily  )
+        3.   Authentication alias  :  select:Vazithcellmanager01/datastore
+                 This above one is before we created in java Authencation and autherication service in global seccurity
+
+Tune performance parameters
+
+To improve performance of messaging within the application server, 
+the proposed Java Virtual Machine settings are advised. By default the initial and maximum
+JVM settings will remain unchanged, select the 'Change heap sizes' checkbox to modify the settings to the proposed values.
+On machines with low amounts of physical memory size or large numbers of application server instances, 
+it maybe necessary to reduce the proposed values accordingly.
+
+(TICK BOX )Change heap sizes ( WE ARE NOT ENABLE THIS PARAMETER)
+  	Current heap sizes 	Proposed heap sizes
+Initial JVM heap size 	 0 MB 	 768 MB
+Maximum JVM heap size 	 0 MB 	 768 MB 
+                            |
+                            V
+                         SUMMARY 
+                            |
+                            v
+                          FINSH
+                            |
+                            V
+                     REVIEW ( Synchronize)
+                    
+--------------------------------------------------------------------------------------
+              RESOURCES > Queue connection factories
+                       |
+                       V
+              SELECT SCOPE : VAZITHNODE01 ( NODE )
+                       |
+                       V
+                 CLICK ON NEW
+                       |
+                       V
+ Select the provider with which to create the Queue connection factory. 
+The following providers support the selected resource type and are available at the selected scope.   < --- ( JMS PROVIDER )
+
+(.) Default messaging provider 
+    WebSphere MQ messaging provider
+                        |
+                        V
+ IN ADMINSTARTION ( GENDREL PROPERTIES )
+    NAME : VAZITH
+    JNDI : ABCDE
+IN  CONNECTIONS
+     BUS: JMS ( SELECT BEFORE CREATED BUS )
+
+Quality of Service
+     Nonpersistent message reliability
+      DEFAULT : EXPRESS NONPERSISTENT
+( OTHER TYPES : BEST EFFORT Nonpersistent, RELIABLE Nonpersistent , RELIABLE Persistent
+   ASSURED Persistent , AS BUS DESTINATION )
+
+Persistent message reliability 
+   DEFAULT : RELIABLE Persistent
+( OTHER TYPES : BEST EFFORT Nonpersistent, RELIABLE Nonpersistent , RELIABLE Persistent
+   ASSURED Persistent , AS BUS DESTINATION )
+                                 |
+                                 V
+                             OK ( OR ) APPLY
+                                 |
+                                 V
+                         REVIEW ( Synchronize)
+------------------------------------------------------------------------------------------------
+
+              RESOURCES > Queue
+                    |
+                    V
+ SELECT SCOPE : VAZITHNODE01 ( NODE )
+                       |
+                       V
+                 CLICK ON NEW
+                       |
+                       V
+ Select the provider with which to create the Queue connection factory. 
+The following providers support the selected resource type and are available at the selected scope.   < --- ( JMS PROVIDER )
+
+(.) Default messaging provider 
+    WebSphere MQ messaging provider
+                        |
+                        V
+IN ADMINSTARTION ( GENDREL PROPERTIES )
+    NAME : VAJITH
+    JNDI : EFGHI
+IN  CONNECTIONS
+     BUS: JMS ( SELECT BEFORE CREATED BUS )
+Queue name 
+SYSTEM.Exception.Destination.vazithNode01.JMS-JMS ( THIS LINK WAS CREATED WHEN WE ADD BUSMENBER IN BUS 
+                                                    IT SHOWS IN CLICK ON CREATED BUS ..RIGHT SIDE CLICK ON
+                                                     DESTINATIONS ..THERE IT SHOWS )
+                          |
+                          V
+                      OK ( OR ) APPLY
+                          |
+                          V
+                   REVIEW ( Synchronize)
+
+----------------------------------------------------------------------------------------------------------------
+
+NOW DEPLOY ONE APPLICATION TO THE SELECT DEDICATED NODE 
+START THE APPLICATION ( sEND.JMS )
+HIT THAT APPLICATION BY ITS DEFAULT PORT
+MENTION ( JNDI NAMES ):
+                   QUENE NAME: EFGHI
+ QUENE CONNECTON FACTORY NAME : ABCDE
+                      MESSAGE :SEND ONE MSG IN THIS BOX ( HELLO )
+
+------------------------------------------------------------------------------------------------------
+SENDING MESSAGES WAS STORED IN 
+ BUS > DESTINATION 
+( SELECT THE CREATED LINK )  _SYSTEM.Exception.Destination.vazithNode01.server1-bus1 
+                         |
+                         V
+RIGHTSIDE SHOWS CLICK ON :QUENE POINT
+                        |
+                        V
+(AGAIN LINK SHOWS:CLICK ON IT) SYSTEM.Exception.Destination.vazithNode01.server1-bus1@vazithNode01.server1-bus1 
+ ANOTHEIR NAME IS QUENE DEPTH ( OPTIONAL NAME )                
+                        |
+                        V
+   DEFALUT IN : (CONFIGURATIONS) CLICK ON (RUN TIME)
+                        |
+                        V
+                    MESSAGES
+                        |
+                        V
+BOX WITH LINK ( MESSAGE ID : 0534584BF70E5604_1 ) CLICK ON THIS 
+                        |
+                        V
+                 MESSAGE BODY
+                       |                           
+                       V                                
+             SHOWS THE SEND MESSAGES ( HERE MSGES STORES )
+----------------------------------------------------------------------------
+ (Approximate total message size (in cluding headers)                      |
+ 626   Bytes                                                               | 
+ Information required Displayable message body size                        |
+ 626  Bytes ) IT SHOWS ABOVE THE SEND MESSAGES BOX WE CAN CHANGE THE SIZE  |  
+                                                                           |
+----------------------------------------------------------------------------
 
 
 
