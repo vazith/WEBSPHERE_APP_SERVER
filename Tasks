@@ -218,7 +218,10 @@ Choose the type of message store for the persistence of message state
         2.   Schema name : vazith ( this named schema was created in database directily  )
         3.   Authentication alias  :  select:Vazithcellmanager01/datastore
                  This above one is before we created in java Authencation and autherication service in global seccurity
-
+               *  enable ( Tick mark ) Create tables
+                                    Click on Next
+                                          |
+                                          V
 Tune performance parameters
 
 To improve performance of messaging within the application server, 
@@ -356,11 +359,32 @@ BOX WITH LINK ( MESSAGE ID : 0534584BF70E5604_1 ) CLICK ON THIS
  Information required Displayable message body size                        |
  626  Bytes ) IT SHOWS ABOVE THE SEND MESSAGES BOX WE CAN CHANGE THE SIZE  |  
                                                                            |
-----------------------------------------------------------------------------
+------------------------------------------------------------------------------
 
+-----------------------------------------------------------------------------------
+In database where the messages was puting 
+by using sql developer connect to database of yours 
 
+It create schema with name of : vazith --> this name was given we while add bus menber in parameter od schema name 
+that Contains Tables : 
+table Name :
+------------------
+SIB00
+SIB01
+SIB02
+SIB CLASS MAP
+SIB KEYS
+SIB LISTING 
+SIB OWNER 
+SIB OWNER0
+SIB XACTS
 
-
+WHERE IS MESSAGES WAS STORED WHILE SELECTING THE DATASTORE IN DATABASE
+----------------------------------------------------------------------
+IN THE TABLENAME --> SIB OWNER
+CLICK ON DATA  ---> THERE SHOWS UUID : 473127D1213987DE
+the ABOVE UUID IS THE MESSAGE ENGINE ID ONLY MESSAGE ENGINE ID PUT IN THIS DATABSE 
+IT DOESNOT STORE THE ID OF MESSAGES AND IT MESSAGES 
 
 
 
