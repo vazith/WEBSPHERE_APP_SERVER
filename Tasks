@@ -67,7 +67,57 @@ In Console
  ------------------------
                 DataSOurce Name : datastore
                 Jndi Name       : bat
-         
+                      Click on Next
+                               |
+                               V
+               Show 
+              ----------
+                        Create Jdbc Provider ( Here also we can create Jdbc Provider ,Simply)
+                        selct the existing jdbc provider 
+                   (    Select the before created Jdbc Driver   )
+                           Click on Next
+                              |
+                              V
+                       Driver Type : 4 
+                       DataBase name : vazith
+                       Database Host name : 192.168.2.36
+                       Port   : 50000
+                       Click On Next
+                             |
+                             V 
+                  Shows
+               -------------
+                 Select the authentication values for this resource.
+                     1. Component-managed authentication alias
+                        select:Vazithcellmanager01/datastore
+                 This above one is before we created in java Authencation and autherication service 
+                      2. Mapping-configuration alias
+                          skip this one
+                      3. Container-managed authentication alias
+                         select:Vazithcellmanager01/datastore
+                  This above one is before we created in java Authencation and autherication service 
+                                 Click on next
+                                    |
+                                    V
+                                 summary
+                                    |
+                                    V
+                             Click on finsih
+                            review (syncronize it)
+                                    |
+                                    V
+               select ( tick mark on ) created database in datassource and click on test connection 
+                        if Test connectin is sucessful (dataBase  is ready)
+                            
+
+
+
+
+
+
+
+
+
 
 
 
