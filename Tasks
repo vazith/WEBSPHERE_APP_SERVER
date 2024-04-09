@@ -390,8 +390,13 @@ IT DOESNOT STORE THE ID OF MESSAGES AND IT MESSAGES
 ------------------------------------------------------------------------------
 Now Creation of tables in database mamually while using datastore in Was
 
-FIRST WITH DB2 
-------------
+WE DID WITH 2 DATABASES 
+--------------------------
+1. IBM DB2 
+2. ORACLE DATABASE
+
+FIRST WITH ---> IBM DB2 
+--------------------------
 ---> IN DB2 WE CAN CREATE MULTIPLE (0R) N NUMBER OF INSTANCE FOR A USER
   STEP 1
    ---> CREATE SCHEMA IN DB2 
