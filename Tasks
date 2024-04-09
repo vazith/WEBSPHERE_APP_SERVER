@@ -387,8 +387,25 @@ the ABOVE UUID IS THE MESSAGE ENGINE ID ONLY MESSAGE ENGINE ID PUT IN THIS DATAB
 IT DOESNOT STORE THE ID OF MESSAGES AND IT MESSAGES 
 
 
+------------------------------------------------------------------------------
+Now Creation of tables in database mamually while using datastore in Was
 
-
+FIRST WITH DB2 
+------------
+---> IN DB2 WE CAN CREATE MULTIPLE (0R) N NUMBER OF INSTANCE FOR A USER
+  STEP 1
+   ---> CREATE SCHEMA IN DB2 
+   ---> OPEN DB2 IMAGE 
+   ---> DB2 > CREATE SCHEMA VAZITH ( VAZITH IS A SCHEMA_NAME )
+         SCHEMA WAS CREATED 
+  STEP 2
+  ----> GO TO YOUR WEBSPHERE_APPLICATION_SERVER
+  ----> GO TO THIS PATH
+        /OPT/IBM/WEBSPHERE/APPSERVER/PROFILES/DMGR
+        RUN THIS  COMMAND 
+        
+ 
+      
 
 
 
