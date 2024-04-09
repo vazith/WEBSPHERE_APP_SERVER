@@ -402,7 +402,85 @@ FIRST WITH DB2
   ----> GO TO YOUR WEBSPHERE_APPLICATION_SERVER
   ----> GO TO THIS PATH
         /OPT/IBM/WEBSPHERE/APPSERVER/PROFILES/DMGR
-        RUN THIS  COMMAND 
+  ----> RUN THIS  COMMAND 
+        ./SIBDDLGENERATOR -SYSTEM DB2 -SCHEMA VAZITH  -USERNAME DB2INST1 -DATABASE ADMIN -STATEMENTEND ";" > VAZITH.SQL
+
+ BREAKDOWN THE ABOVE COMMAND
+-----------------------------
+./SIBDDLGENERATOR : DEFAULT COMMAND IN THE DMGR/BIN 
+-SYSTEM           : WE HAVE MENTION ( DATABASE NAME )
+-SCHEMA           : WE HAVE MENTION ( SCHEMA NAME )
+-USERNAME         : WE HAVE MENTION (DATABASE USERNAME)
+-DATABASE         : WE HAVE MENTION ( DATABASE NAME [IN WHICH DATABSE WE CREATED SCHEMA WE HAVE MENTION THAT DATABSE NAME  ])
+-STATEMENT ";"    : DEFAULT COMMAND IN THE DMGR/BIN
+- > VAZITH.SQL    : WE CAN GIVE ANY NAME HERE .BUT THE EXTESNION SHOULD ME ONLY A (.SQL)
+--------------------------------------------------------------------------------------------------------------------
+                                                |
+                                                V
+                         AFTER RUN THAT COMMAND (ABOVE COMMAND )
+                         ------------------------------------------
+                 STEP 3 : 
+                      A FILE WAS CREATED WITH NAME VAZITH.SQL IN THE PATH /DMGR/BIN
+                      NOW
+                        BY USING SCP  SEND THAT VAZITH.SQL TO DB2 IMAGE 
+        ----->          SCP -R VAZITH.SQL DB2INST1@192.168.1.69:/HOME/DB2INST
+                                                | 
+                                                V
+
+                 STEP 4  :
+                           OPEN DB2 IMAGE GO THE PATH /HOME/DB2INSTANCE ( BEFORE :BY USING SCP WE SEND FILE THIS PATH )
+                         RUN THIS COMMAND
+                         -----------------
+                         ---> DB2 -TVF VAZITH.SQ;
+ 
+                         AFTER RUNIED THE ABOVE COMMAND 
+                        --------------------------------
+                          IT CREATED TABLES             
+
+                                                 |
+                                                 V
+                                                 
+                   STEP 5 :
+                        NOW OPEN SQL DEVELOPER AND CONNECT TO YOUR DATABSE
+                         CLICK ON YOUR SCHEMA NAME > CLICK ON TABLES ( IN TABLES WE CAN SEE TABLES )
+
+                        table Name :
+                      ------------------
+                         1. SIB00
+                         2. SIB01
+                         3. SIB02
+                         4. SIB CLASS MAP 
+                         5. SIB KEYS
+                         6. SIB LISTING 
+                         7. SIB OWNER 
+                         8. SIB OWNER0
+                         9. SIB XACTS
+                                            
+-----------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
  
       
