@@ -1,1 +1,85 @@
+-------------APACHE_LDAP--------------------------
+LDAP = LIGHT WEIGHT DIRECTORY PROTOCOL 
+
+GET FILES IN YOUR UBUNTU 
+FILE NAME : ApacheDirectoryStudio-2.0.0.v20210717-M17-linux.gtk.x86_64.tar.gz
+                    |
+                    v
+                untar that file
+     ( tar -xzvf ApacheDirectoryStudio-2.0.0.v20210717-M17-linux.gtk.x86_64.tar.gz )
+                     |
+                     v                    
+  new directory was created with name of ApacheDirectoryStudio . go to that directory 
+           ( cd  ApacheDirectoryStudio )
+                     |
+                     V
+             run this command 
+          ( ./ApacheDirectoryStudio )
+
+---------------(GUI)Opens-----------------
+Now don't do anything in this gui now 
+------------------------------------------
+GET ONE MORE FILE IN YOUR LOCAL IMAGE WHERE THE WEBSPHERE APP SERVER IS RUING 
+FILE NAME : apacheds-2.0.0.AM26.zip
+                    |
+                    v
+               unzip  that file
+          ( unzip apacheds-2.0.0.AM26.zip )
+                    |
+                    V
+                 go to that directory
+             ( cd apacheds-2.0.0.AM26.zip/bin )
+                    |
+                    V
+               run this command
+              ( ./apacheds.sh start  )
+---> apache server was started & if u want check the status server is runing or not run this command
+              ( ./apacheds.sh status )
+----> to stop the apache server run this command 
+              ( .apacheds.sh stop )
+
+
+NOTE : SOME TIME WE GET ERROR WHEN WE RUN ./apacheds.sh start WAS NOT WORKED THAT TIME WE NEED TO UPDATE THE JDK
+FOR APACHE_LDAP JDK MUST BE ABOVE 101 VERSION..IF .apacheds.sh start IS NOT WORKED UPDATE THE JDK
+
+
+
+-------------------------------------------------------------------------------------------------------------
+PREVIOUSLY A GUI WAS OPEND NA .GO TO THAT GUI 
+IN LEFT SIDE SHOW (A SMALL WINDOWN WITH PLUS SYMBOL) (or) CLICK ON FIRST ONE THE LDAP GUI
+                      AFTER THAT MENTION THE PARAMETERS 
+                    --------------------------------------
+                    CONNECTION NAME : VAZITH
+                       HOSTNAME     : 192.168.3.122
+                       PORT         :10389 ( DEFAULT IT SHOWS 389 CHANGE TO 10389 )
+                       CLICK ON  CHECK NETWORK PARAMETERS
+                       IF TEST CONENCTION WAS SUCCESFULL. CLICK ON FINSH
+
+
+                                          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                 
+
+
+
+
+
+
+
+
+
 
