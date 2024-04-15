@@ -29,4 +29,43 @@ CMD FOR BACKUP THE PROFILES
 PATH:/opt/IBM/Websphere/AppServer/bin
 --->./manageprofiles.sh -backupProfile -profileName VAZ -backupFile /opt/IBM/WebSphere/AppServer/logs/VAZ_backup.zip
 
+CMD FOR CHANGEING ADMIN CONSOLE PASSWORD 
+PATH:/opt/IBM/Websphere/AppServer/bin
+WE ARE CHANGEING PASSWORD USING WSADMIN SCRIPT
+-----------------------------------------
+--> ./wsadmin.sh -lang jython -username wasadmin -password sarasu10 -hostname vazith.eidikointernal.com -port 8879
+                                       (OR)
+---> ./wsadmin.sh 
+it ask username : wasadmin
+       password : sarasu10 
+it automatically connect to the dmgr console 
+
+AWSADMIN SCRIPT OPENS 
+----------------------
+---> AdminTask.changeFileRegistryAccountpassword('userId wasadmin -password new_password ')
+---> AdminConfig.save()
+
+                 2ND MENTHOD FOR CHANGEING ADMIN PASSWORD 
+                -----------------------------------------
+PATH: /opt/IBM/Websphere/AppServer/bin
+--->  ./wve_encodePassword.sh new_password 
+example
+-------
+----> ./wve_encodePassword.sh vazith
+'decoded password == "vazith", encoded password == "{xor}KT4lNis3"
+Now
+go to this path : /opt/IBM/Websphere/Appserver/profiles/dmgr/config/cell/wasnode01/
+by using vi editor open : vi security.xml
+Replace the old encoded password with this new encoded password
+
+
+
+
+
+
+
+
+
+
+
 
