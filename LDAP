@@ -46,18 +46,32 @@ FOR APACHE_LDAP JDK MUST BE ABOVE 101 VERSION..IF .apacheds.sh start IS NOT WORK
 
 -------------------------------------------------------------------------------------------------------------
 PREVIOUSLY A GUI WAS OPEND NA .GO TO THAT GUI 
+....
 IN LEFT SIDE SHOW (A SMALL WINDOWN WITH PLUS SYMBOL) (or) CLICK ON FIRST ONE THE LDAP GUI
                       AFTER THAT MENTION THE PARAMETERS 
-                    --------------------------------------
-                    CONNECTION NAME : VAZITH
-                       HOSTNAME     : 192.168.3.122
-                       PORT         :10389 ( DEFAULT IT SHOWS 389 CHANGE TO 10389 )
-                       CLICK ON  CHECK NETWORK PARAMETERS
-                       IF TEST CONENCTION WAS SUCCESFULL. CLICK ON FINSH
-
-
-                                          
-
+         ----------------------------------------------------------------------
+                 --->    CONNECTION NAME : VAZITH
+                 --->     HOSTNAME     : 192.168.3.122
+                 --->     PORT         :10389 ( DEFAULT IT SHOWS 389 CHANGE TO 10389 )
+                 --->     CLICK ON  CHECK NETWORK PARAMETERS
+                 --->     IF TEST CONENCTION WAS SUCCESFULL.
+                 --->      CLICK ON NEXT
+                NOW MENTION
+                 ---->   BIND DN (or) USER : uid=admin,ou=system
+                 ---->   PASSWORD           : secret 
+                 ---->   CLIKC ON FINISH
+-------------------------------------------------------------------------------------
+AFTER THAT ABOVE STEP FINISHED IT CREATED  ABOVE LEFT SIDE SOME FILE WITH NAMES OF
+>DIT
+ > ROOT 
+    >ou=schema
+    >dc=example,dc=com
+         >ou=group
+         >ou=people
+    >ou=config
+    >ou=system
+----------------------------------------------------------------
+---> click on dc=example,dc=com
 
 
 
