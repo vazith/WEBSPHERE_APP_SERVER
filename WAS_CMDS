@@ -1,7 +1,7 @@
 -------WAS_CMD------------
 
 CMD FOR CHECK THE VERSION OF WEBSPHERE
-PATH:/opt/IBM/Websphere/AppServer/bin
+PATH: /Websphere/AppServer/bin
 ----->./versioninfo.sh
 
 CMD FOR CHECK THE SDK OF WEBSPHERE
@@ -57,6 +57,10 @@ Now
 go to this path : /opt/IBM/Websphere/Appserver/profiles/dmgr/config/cell/wasnode01/
 by using vi editor open : vi security.xml
 Replace the old encoded password with this new encoded password
+
+CMD FOR CHECK AGENTINSTALLER VERSION 
+go to this path : /opt/IBM/Installmanaager/eclipse 
+Run this cmd  : ./IBMIM -version
 
 
 
