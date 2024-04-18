@@ -63,6 +63,20 @@ go to this path : /opt/IBM/Installmanaager/eclipse
 Run this cmd  : ./IBMIM -version
 
 
+CMD FOR CLI HEAP DUMP
+PATH :/opt/IBM/websphere/Appserver/profile/dmgr/bin 
+RUN THIS CMD1 : ./wsadmin.sh ( after run that command it ask username and password mention that )
+                          ( or )
+./wlsadmin.sh -lang jython -username wasadmin -password sarasu10 -hostname was.eidikointernal.com -port 8888
+CMD 2:
+-----
+set jvm [$AdminControl completeObjectName type=JVM,process=Servername,*]
+CMD 3:
+-----
+$AdminControl invoke $jvm generateHeapDump
+
+
+
 
 
 
