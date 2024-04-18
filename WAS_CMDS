@@ -76,9 +76,37 @@ CMD 3:
 $AdminControl invoke $jvm generateHeapDump
 
 
+CMD FOR THREAD DUMP 
+take that server processer id --> ps -ef | grep -i servername
+                                          |
+                                          v
+                                       kill -3 serverprocesserid 
+go to path of that node ex:/opt/IBM/Websphere/Appserver/profiles/node1/
+there it created a thread dump with name of (JAVA_CORE)
 
 
-
+CMD FOR GC DUMP ( or )
+---------------------
+OPEN ADMIN CONSOLE > CLICK ON SERVER > SERVER INFRASTRUCTURE
+                                       -----------------------
+                                        --> CLASS LOADER
+                                        --> PROCESS DEFINATION
+                                        --> PROCESS EXCUATION
+                                        --> MONITOR POLICY 
+> CLICK ON PROCESS DEFINATION > ADDITION PROPERTIES
+                                ------------------
+                                   --> JAVA VIRTUAL MACHINE
+                                   --> PROCESS LOGS
+                                   --> Environment Entries
+                                   --> Process execution 
+                                   --> Logging and tracing
+> CLICK ON JAVA VIRTUAL MACHINE ( IN JVM THERE IS BOX WITH HEADING OF Generic JVM arguments ]
+> IN THAT BOX MENTION THIS : -verbose:gc -Xverbosegclog:/home/bandaru/gc.log
+NOW
+GO TO THIS PATH /home/bandaru/ (THERE A FILE WILL BE GENERATED WITH NAME OF gc.log)
+NOTE:
+----
+Extension will be only with .log 
 
 
 
