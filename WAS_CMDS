@@ -85,8 +85,8 @@ go to path of that node ex:/opt/IBM/Websphere/Appserver/profiles/node1/
 there it created a thread dump with name of (JAVA_CORE)
 
 
-CMD FOR GC DUMP ( or )
----------------------
+CMD FOR GC DUMP ( or ) LOG
+-------------------------------------
 OPEN ADMIN CONSOLE > CLICK ON SERVER > SERVER INFRASTRUCTURE
                                        -----------------------
                                         --> CLASS LOADER
