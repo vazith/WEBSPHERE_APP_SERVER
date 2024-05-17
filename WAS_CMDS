@@ -108,9 +108,31 @@ NOTE:
 ----
 Extension will be only with .log 
 
+---------------------------------------------------------------------------------------
+CMD FOR CERTIFICATE(signer) using CLI
 
+--> 1st CMD :  ./gskcmd -keydb -create -db key.kdb -pw sarasu10 -type cms -stash
+This cmd create key.kdb and stash for storeing the certificate
 
+--> 2nd command : ./gskcmd -cert -create -db key.kdb -pw sarasu10 -label
+"MyCert" -dn "CN=mydomain.com, O=MyOrganization, C=US" -size 2048 -default_cert yes -expire 365
+This create the certificate and add the certificate in key.kdb
 
+-------------------------------------------------------------------------------------
+CMD for check the label name (if we forget)
+
+--> 1st cmd :(snap shop of linux)
+[root@vazith bin]# ./gskcmd -cert -list -db key.kdb -pw sarasu10
+Certificates in database /opt/IBM/HTTPServer/bin/key.kdb:
+   MyCert
+[root@vazith bin]# ./gskcmd -cert -list -db key.kdb 
+A password is required to access the source key database.
+Please enter a password:
+  
+Certificates in database /opt/IBM/HTTPServer/bin/key.kdb:
+   MyCert 
+
+------------------------------------------------------------------------------------------
 
 
 
